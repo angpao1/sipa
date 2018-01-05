@@ -23,34 +23,34 @@ var getErrorMessage = function (err) {
     return message;
 }
 
-exports.login = function (req, res) {
-    console.log(req.body);
-    console.log('Email: ' + req.body.email);
-    console.log('Password: ' + req.body.password);
+// exports.login = function (req, res) {
+//     console.log(req.body);
+//     console.log('Email: ' + req.body.email);
+//     console.log('Password: ' + req.body.password);
 
-    req.checkBody('email', 'Invalid email').notEmpty().isEmail();
-    req.sanitizeBody('email').normalizeEmail();
-    var errors = req.validationErrors();
+//     req.checkBody('email', 'Invalid email').notEmpty().isEmail();
+//     req.sanitizeBody('email').normalizeEmail();
+//     var errors = req.validationErrors();
 
-    if (req.body.remember === 'remember') {
-        req.session.remember = true;
-        req.session.email = req.body.email;
-        req.session.cookie.maxAge = 60000;
-    }
+//     if (req.body.remember === 'remember') {
+//         req.session.remember = true;
+//         req.session.email = req.body.email;
+//         req.session.cookie.maxAge = 60000;
+//     }
 
-    if (errors) {
-        res.render('index', {
-            message: 'There have been validation errors: ' + JSON.stringify(errors),
-            isLoggedIn: false
-        });
-        return;
-    }
+//     if (errors) {
+//         res.render('index', {
+//             message: 'There have been validation errors: ' + JSON.stringify(errors),
+//             isLoggedIn: false
+//         });
+//         return;
+//     }
 
-    res.render('index', {
-        message: 'Logged in as' + req.body.email,
-        isLoggedIn: true
-    });
-}
+//     res.render('index', {
+//         message: 'Logged in as' + req.body.email,
+//         isLoggedIn: true
+//     });
+// }
 
 exports.logout = function (req, res) {
     res.render('index', {
@@ -153,3 +153,13 @@ exports.signup = function (req, res, next) {
     }
 }
 
+exports.renderLogin = function (req, res) {
+    if (!req.user) {
+        res.render('login', {
+            title: 'Log in',
+            messages: req.flash('error') || req.flash('info')
+        });
+    } else {
+        return res.redirect('/');
+    }
+}
