@@ -20,5 +20,6 @@ module.exports = function (app) {
         .put(user.update)
         .delete(user.delete);
     app.param('username', user.userByUsername);
+    app.post('/logout', user.logout);
 
 };

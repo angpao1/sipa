@@ -6,7 +6,7 @@ html
         each msg in messages
             div.flash
                 = msg
-        form(action="/signup", name="signup", method="post")
+        form(name="signup", method="POST", action="/signup")
         div
             label(for="username") Username
             input(type="text", name="username", placeholder="username")

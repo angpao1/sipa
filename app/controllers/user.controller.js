@@ -53,11 +53,12 @@ var getErrorMessage = function (err) {
 // }
 
 exports.logout = function (req, res) {
-    res.render('index', {
-        message: 'See you again later',
-        isLoggedIn: false
-    });
-    req.session = null;
+    // res.render('index', {
+    //     message: 'See you again later',
+    //     isLoggedIn: false
+    // });
+    // req.session = null;
+    req.logout();
 }
 
 var User = require('mongoose').model('User');
