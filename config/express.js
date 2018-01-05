@@ -17,21 +17,25 @@ module.exports = function () {
     } else {
         app.use(compression);
     }
+    // app.use(bodyParser.urlencoded({
+    //     extended: true
+    // }));
+    // app.use(bodyParser.json());
+    // app.use(session({
+    //     secret: config.sessionSecret,
+    //     resave: false,
+    //     saveUninitialized: true
+    // }));
+    // app.use(flash());
+    // app.use(passport.initialize());
+    // app.use(passport.session());
+
 
     app.use(session({
         secret: config.sessionSecret,
         resave: false,
         saveUninitialized: true
     }));
-    // app.use(session({
-    //     sotre: new RedisStore({
-    //         host: 'localhost',
-    //         port: 6379,
-    //         db: 2,
-    //         pass: 'redis_password'
-    //     }),
-    //     secret: 'secret_key'
-    // }));
 
     app.use(flash());
     app.use(passport.initialize());
