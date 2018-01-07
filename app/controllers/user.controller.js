@@ -59,6 +59,7 @@ exports.logout = function (req, res) {
     // });
     // req.session = null;
     req.logout();
+    res.redirect('/');
 }
 
 var User = require('mongoose').model('User');
