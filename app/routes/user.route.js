@@ -21,5 +21,9 @@ module.exports = function (app) {
         .delete(user.delete);
     app.param('username', user.userByUsername);
     app.post('/logout', user.logout);
+    app.get('/oauth/facebook', passport.authenticate('facebook', {
+        failureRedirect: '/login',
+        successRedirect: '/'
+    }));
 
 };
