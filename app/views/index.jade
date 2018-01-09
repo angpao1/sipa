@@ -15,8 +15,10 @@ html
             div
                 a(href="/login") Log in
 
-        div#mainApp(ng-include="'/modules/hello/views/hello.client.view.jade'")
+        div#mainApp(ui-view)
+
         script(src="/lib/angular/angular.min.js", type="text/javascript")
+        script(src="/lib/angular-ui-router/release/angular-ui-router.min.js")
         script(src="/modules/hello/hello.client.module.js", type="text/javascript")
         script(src="/modules/hello/controllers/hello.client.controller.js", type="text/javascript")
         script(src="/modules/hello/filters/hello.client.filter.js", type="text/javascript")
