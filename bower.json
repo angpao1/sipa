@@ -1,0 +1,20 @@
+{
+  "name": "sipa",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "angpao"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/angpao1/sipa",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4"
+  }
+}

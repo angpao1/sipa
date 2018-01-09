@@ -14,3 +14,9 @@ html
                 a(href="/signup") Sign up
             div
                 a(href="/login") Log in
+
+        div(ng-app='Hello')
+            | {{ 'World' | sayhello }}
+            
+        script(src="/lib/angular/angular.min.js", type="text/javascript")
+        script(src="/application.js", type="text/javascript")
