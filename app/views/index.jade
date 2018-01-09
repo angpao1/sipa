@@ -15,12 +15,7 @@ html
             div
                 a(href="/login") Log in
 
-        div(ng-app='Hello', ng-controller='NameController', ng-strict-di)
-            div
-                label(for="yourName") Your name is
-                input(type="text", name="yourName", ng-model="yourName")
-            div
-                | {{ yourName | sayhello }}
+        div#mainApp(ng-include="'/modules/hello/views/hello.client.view.jade'")
         script(src="/lib/angular/angular.min.js", type="text/javascript")
         script(src="modules/hello/hello.client.module.js", type="text/javascript")
         script(src="/application.js", type="text/javascript")

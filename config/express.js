@@ -47,11 +47,12 @@ module.exports = function () {
     app.use(bodyParser.json());
     app.use(validator());
 
-    app.set('views', './app/views');
+    app.set('views', ['./app/views', './publie']);
     app.set('view engine', 'jade');
 
     require('../app/routes/index.server.route')(app);
     require('../app/routes/user.server.route')(app);
+    require('../app/routes/partial.server.route')(app);
 
     app.use(sass({
         src: './sass',
