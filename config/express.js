@@ -50,8 +50,8 @@ module.exports = function () {
     app.set('views', './app/views');
     app.set('view engine', 'jade');
 
-    require('../app/routes/index.route')(app);
-    require('../app/routes/user.route')(app);
+    require('../app/routes/index.server.route')(app);
+    require('../app/routes/user.server.route')(app);
 
     app.use(sass({
         src: './sass',

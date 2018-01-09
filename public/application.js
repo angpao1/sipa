@@ -1,6 +1,7 @@
 'use strict';
 
-var mainAppModule = angular.module('Hello', []);
+var mainAppModuleName = 'Main'
+var mainAppModule = angular.module(mainAppModuleName, ['hello']);
 
 mainAppModule.controller('NameController', ['$scope', '$http', function ($scope, $http) {
     $scope.yourName = 'No Name';
