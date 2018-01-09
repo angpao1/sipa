@@ -1,6 +1,6 @@
-div(ng-app='Hello', ng-controller='NameController', ng-strict-di)
+div(ng-controller='HelloController')
     div
         label(for="yourName") Your name is
         input(type="text", name="yourName", ng-model="yourName")
     div
-        | {{ yourName | sayhello }}
+        | {{ yourName | sayHello }}
