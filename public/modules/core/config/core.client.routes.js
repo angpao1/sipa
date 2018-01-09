@@ -1,7 +1,14 @@
 angular.module('core').config([
     '$locationProvider',
-    '$urlRouterProvider', function($urlRouterProvider) {
+    '$urlRouterProvider', 
+    '$stateProvider',
+    function($locationProvider, $urlRouterProvider, $stateProvider) {
         $locationProvider.hashPrefix('!');
         $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+        .state('home', {
+            url: '/'
+        });
     }
 ]);

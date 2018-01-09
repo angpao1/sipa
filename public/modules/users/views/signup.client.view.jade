@@ -17,6 +17,8 @@ form(name="signupForm", ng-controller='AuthController', ng-submit='signup(signup
         input(type="password", name="password", placeholder="Password", ng-model='user.password', ng-minlength='6')
     div
         input(type="submit", value="Sign up", ng-disabled='signupForm.$invalid')
+        div(ng-show='error')
+            strong(ng-bind='error')
 div
     a(href="/oauth/facebook") Log in with Facebook
 div

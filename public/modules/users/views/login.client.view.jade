@@ -8,6 +8,8 @@ form(name='loginForm', ng-controller='AuthController', ng-submit='login(loginFor
         input(name='password', type='text', placeholder='password', ng-model='user.password', required)
     div
         input(type='submit', value='Log in', ng-disabled='loginForm.$invalid')
+        div(ng-show='error')
+            strong(ng-bind='error')
 div
     a(href="/oauth/facebook") Log in with Facebook
 div
