@@ -1,19 +1,19 @@
-form(name="signup", method="POST", action="/signup")
+form(name="signupForm", method="POST", action="/signup", novalidate)
     div
         label(for="username") Username
-        input(type="text", name="username", placeholder="username")
+        input(type="text", name="username", placeholder="username", ng-model='user.username', ng-maxlength='10', required)
     div
         label(for="firstname") Firstname 
-        input(type="text", name="firstname", placeholder="Firstname")
+        input(type="text", name="firstname", placeholder="Firstname", ng-model='user.firstname', required)
     div
         label(for="lastname") Lastname 
-        input(type="text", name="lastname", placeholder="Lastname")
+        input(type="text", name="lastname", placeholder="Lastname", ng-model='user.lastname', required)
     div
         label(for="email") Email 
-        input(type="email", name="email", placeholder="youremail@email.com")
+        input(type="email", name="email", placeholder="youremail@email.com", ng-model='user.email', required)
     div
         label(for="password") Password 
-        input(type="password", name="password", placeholder="Password")
+        input(type="password", name="password", placeholder="Password", ng-model='user.password', ng-minlength='6')
     div
         input(type="submit", value="Sign up")
 div
