@@ -1,4 +1,4 @@
-form(name="signupForm", method="POST", action="/signup", novalidate)
+form(name="signupForm", ng-controller='AuthController', ng-submit='signup(signupForm.$valid)', novalidate)
     div
         label(for="username") Username
         input(type="text", name="username", placeholder="username", ng-model='user.username', ng-maxlength='10', required)
@@ -15,7 +15,7 @@ form(name="signupForm", method="POST", action="/signup", novalidate)
         label(for="password") Password 
         input(type="password", name="password", placeholder="Password", ng-model='user.password', ng-minlength='6')
     div
-        input(type="submit", value="Sign up")
+        input(type="submit", value="Sign up", ng-disabled='signupForm.$invalid')
 div
     a(href="/oauth/facebook") Log in with Facebook
 div
