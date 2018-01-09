@@ -3,7 +3,7 @@ html
     head
         title= title
         link(rel="stylesheet", href="/css/main.css")
-    body
+    body#mainApp
         if username
             h2 Hello #{username}
             div
@@ -11,18 +11,18 @@ html
                     input(type="submit", value="Log out")
         else
             div
-                a(href="/signup") Sign up
+                a(ui-sref='signup') Sign up
             div
-                a(href="/login") Log in
+                a(ui-sref='login') Log in
 
-        div#mainApp(ui-view="")
+        div(ui-view="")
 
         script(src="/lib/angular/angular.min.js", type="text/javascript")
-        script(src="/lib/angular-ui-router/release/angular-ui-router.min.js")
-        script(src="/modules/core/core.client.module.js")
-        script(src="/modules/core/config/core.client.routes.js")
-        script(src="/modules/hello/hello.client.module.js", type="text/javascript")
-        script(src="/modules/hello/config/hello.client.routes.js" type="text/javascript")
-        script(src="/modules/hello/controllers/hello.client.controller.js", type="text/javascript")
-        script(src="/modules/hello/filters/hello.client.filter.js", type="text/javascript")
+        script(src="/lib/angular-ui-router/release/angular-ui-router.min.js", type="text/javascript")
+        script(src="/modules/core/core.client.module.js", type="text/javascript")
+        script(src="/modules/core/config/core.client.routes.js", type="text/javascript")
+
+        script(src="/modules/users/users.client.module.js", type="text/javascript")
+        script(src="/modules/users/config/users.client.routes.js", type="text/javascript")
+
         script(src="/application.js", type="text/javascript")

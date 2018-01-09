@@ -1,0 +1,15 @@
+h2 Log in
+form(name='login', method='POST', action='/login')
+    div
+        label(for='username') Username
+        input(name='username', type='text', placeholder='username')
+    div
+        label(for='password') Password 
+        input(name='password', type='text', placeholder='password')
+    div
+        input(type='submit', value='Log in')
+div
+    a(href="/oauth/facebook") Log in with Facebook
+div
+    a(href="/oauth/google") Log in with Google 
+
