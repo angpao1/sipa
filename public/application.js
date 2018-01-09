@@ -2,8 +2,9 @@
 
 var mainAppModule = angular.module('Hello', []);
 
-mainAppModule.controller('NameController', ['$scope', function ($scope) {
+mainAppModule.controller('NameController', ['$scope', '$http', function ($scope, $http) {
     $scope.yourName = 'No Name';
+    var users_json = $http.get('/user');
 }]);
 
 mainAppModule.filter('sayhello', function () {
