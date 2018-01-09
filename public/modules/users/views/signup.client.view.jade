@@ -11,6 +11,7 @@ form(name="signupForm", ng-controller='AuthController', ng-submit='signup(signup
     div
         label(for="email") Email 
         input(type="email", name="email", placeholder="youremail@email.com", ng-model='user.email', required)
+        p(ng-show='signupForm.email.$error.required && signupForm.email.$touched') Email is invalid.
     div
         label(for="password") Password 
         input(type="password", name="password", placeholder="Password", ng-model='user.password', ng-minlength='6')
